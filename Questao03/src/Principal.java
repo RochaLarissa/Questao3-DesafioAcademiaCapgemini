@@ -39,7 +39,7 @@ public class Principal {
 		
 		/*A quantidade de pares de anagramas possíveis dentro da palavra terá sempre comprimento menor do que a palavra
 		 * original. Pelo principio fundamental da contagem, anagramas são calculados usando fatorial e contando as
-		 * letras repetida como uma só. 
+		 * letras repetida como uma só. Como são pares, o número fatorial será dividido por 2 e arrendondado para menos.
 		*/
 		int fat = 1;
 		if (letrasrepetidas > 0) {
@@ -48,7 +48,10 @@ public class Principal {
 				fat = fat * i; 
 			}
 		}
-		qtdAnagrama += fat;
+		System.out.println("qtd de anagrama" + qtdAnagrama);
+		qtdAnagrama += Math.floor(fat/2); 
+		System.out.println("qtd de anagrama" + qtdAnagrama);
+		
 		
 		//retornando a quantidade de anagramas no console
 		if (letrasrepetidas > 0) {
